@@ -1,0 +1,58 @@
+@startuml
+group rejestracja
+  autonumber "<font color=purple><b> 000 "
+  actor Użytkownik
+  Użytkownik -[#purple]> Gra : Zarejestruj się
+  Użytkownik  <-[#purple]- Gra : Podaj login, hasło i adres e-mail
+  alt poprawne dane
+    Użytkownik  <-[#purple]- Gra : Dane poprawne, na podany adres e-mail wysłany link aktywacyjny
+  else niepoprawne dane
+    Użytkownik  <-[#purple]- Gra : Dane niepoprawne, popraw dane
+  end
+end
+
+group logowanie
+  autonumber 20 1 "<font color=grey><b> 000 "
+  Użytkownik -[#grey]> Gra : Zaloguj się
+  Użytkownik  <-[#grey]- Gra : Podaj login i hasło
+
+  alt poprawne dane
+    Użytkownik  <-[#grey]- Gra : Zalogowanie pomyślne
+  else niepoprawne dane
+    Użytkownik <-[#grey]- Gra : Podany login lub hasło są nieprawidłowe
+  else inny typ błędu
+    Użytkownik  <-[#grey]- Gra : Informacja o innym typie błędu
+  end
+end
+
+group personalizacja rozgrywki
+  autonumber 30 1 "<font color=red><b> 000 "
+  Użytkownik -[#red]> Gra : Wybór ilości zgadywanych pól kodu
+  Użytkownik -[#red]> Gra : Wybór ilości możliwych prób
+  Użytkownik -[#red]> Gra : Wybór rozpocznij grę
+  Użytkownik  <-[#red]- Gra : Wiadomość o rozpoczęciu gry
+end
+
+group rozgrywka 
+ autonumber 40 1 "<font color=green><b> 000  "
+ Użytkownik -[#green]> Gra : Próba odgadnięcia kodu
+ alt prawidłowy kod
+    Użytkownik <-[#green]- Gra : Informacja o wygranej 
+    note left: {stanGry: wygrana, kod: prawidłowy}
+  else nieprawidłowy kod i gra się nie skończyła
+    Użytkownik <-[#green]- Gra : Kontynuacja
+    note left: {stanGry: kontynuacja, kod: nieprawidłowy}
+  else koniec gry
+    Użytkownik <-[#green]- Gra : Informacja o przegranej 
+    note left: {stanGry: pregrana, kod: nieprawidłowy}
+  end
+end
+
+group wczytaj grę
+autonumber 60 1 "<font color=orange><b> 000  "
+  Użytkownik -[#orange]> Gra : Wczytaj grę
+  Użytkownik <-[#orange]- Gra : Wyświetla zapisane stany gry
+  Użytkownik -[#orange]> Gra : Wybiera jeden z zapisanych stanów gry
+  Użytkownik <-[#orange]- Gra : Wczytuje wybraną przez użytkownika grę
+end
+@enduml

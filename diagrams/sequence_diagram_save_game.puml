@@ -1,0 +1,15 @@
+@startuml
+group zapis gry
+autonumber 70 1 "<font color=pink><b> 000  "
+  Klient -> Klient : Zapisz grę, podaj nazwę do zapisu
+  Klient -> Klient : Podaj nazwę do zapisu
+  Klient -> Serwer : Zapisz grę
+  alt nazwa rozgrywki unikatowa
+    Serwer -> Klient : Zapisuje stan gry
+  else podana nazwa istnieje
+    Serwer -> Klient : Zapis nie powiódł się
+  else inny typ błędu
+    Serwer -> Klient : Inny typ błędu
+  end 
+end
+@enduml

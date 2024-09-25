@@ -1,0 +1,100 @@
+@startuml
+skinparam classAttributeIconSize 0
+client.Game --> rules.MiddleLayer: HTTP
+main.Main --> client.Game
+main.Main --> main.UserGui
+client.Game --> client.UserInput
+
+package main {
+  class UserGui implements client.UserInput {
+  }
+
+  class Main {
+  -Game: Game
+  -UserInput: UserInput
+  }
+}
+
+package client {
+  class Game {
+    -endGame: bool False
+    -codeLength: int 0
+    -numberAttempts: int 0
+    -MiddleLayer: MiddleLayer
+    +UserInput
+    -startGame()
+    -personalizeGame()  
+  }
+
+  interface UserInput {
+    #getUserCode(): ArrayList<int[]> 
+  }
+}
+
+package rules {
+  ScoreBoard -- Puntaction
+  ScoreBoard -- ScoreBoardTable
+  RulesOfMasterMind -- State
+  MiddleLayer -- RulesOfMasterMind
+  MiddleLayer -- ScoreBoard
+  ScoreBoardTable -- ScoreRecord
+  RulesOfMasterMind -- Hint
+
+  class ScoreBoard {
+    -Punctation: enum
+    -ScoreBoardTable: ScoreBoardTable
+    -updateScoreBoard()
+    +countScore()
+    +showScoreBoard(): ScoreboardTable
+  }
+
+  enum Puntaction {
+    +MAXIMUM_ATTEMPTS: int 14
+    +CORRECT_PLANET_CORRECT_POSITION: int 2
+    +CORRECT_PLANET_WRONG_POSITION: int 1
+ }
+
+  class ScoreBoardTable {
+    -ScoreRecords[]
+  }
+
+  class ScoreRecord {
+    -position: int
+    -score: int
+    -attempts: int
+    -name: String
+    -time: Timestamp
+  }
+
+  class RulesOfMasterMind {
+    -code: ArrayList<int[8]> 
+    -State: enum
+    +generateCode()  
+    +rateAttempt(user_answer): Hint 
+    +isEndGame(): bool
+  }
+
+  class Hint {
+    int colorAndPositionGusssed
+    int onlyColorGuessed
+  }
+
+  json JSON {
+    "state":"win/lose/continue",
+    "rates":"<0, 8>W, <0, 8>B"
+  }
+
+  enum State {
+   +WIN
+   +LOSE
+   +CONTINUE
+  }
+
+  class MiddleLayer {
+    -RulesOfMasterMind: RulesOfMasterMind
+    -ScoreBoard: ScoreBoard
+    +rateAttempt(user_answer): State, String int [2] 
+  }
+}
+
+@enduml

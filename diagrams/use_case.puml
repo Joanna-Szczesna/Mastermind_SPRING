@@ -1,0 +1,21 @@
+@startuml
+skinparam actorStyle awesome
+actor User
+actor Admin
+
+(Play new game) as (UC1)
+(Choose game options) as (UC2)
+(Save game) as (UC3)
+(Load game) as (UC4)
+(Show high scores) as (UC5)
+(Reset high scores) as (AC1)
+(Remove user account) as (AC2)
+
+User --> UC1
+User --> UC2
+User --> UC3
+User --> UC4
+User --> UC5
+Admin --> AC1
+Admin --> AC2
+@enduml
