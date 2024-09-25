@@ -124,7 +124,7 @@ Unix:
 
 ## Use Case Diagram 
 
-![Use Case Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind/main/diagrams/use_case.puml)
+![Use Case Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind_SPRING/main/diagrams/use_case.puml)
 
 ## Sequence Diagrams
 
@@ -134,7 +134,7 @@ PL version: [Diagram sekwencji](#diagram-sekwencji)
 
 ## Class Diagram
 
-![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind/main/diagrams/class_diagram.puml)
+![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind_SPRING/main/diagrams/class_diagram.puml)
 
 
 ## Functional requirements
@@ -401,17 +401,17 @@ Unix:
 
 ## Diagram przypadków użycia
 
-![Use Case Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind/main/diagrams/use_case.puml)
+![Use Case Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind_SPRING/main/diagrams/use_case.puml)
 
 ## Diagram sekwencji
 
-![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind/main/diagrams/sequence_diagram.puml)
+![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind_SPRING/main/diagrams/sequence_diagram.puml)
 
-![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind/main/diagrams/sequence_diagram_save_game.puml)
+![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind_SPRING/main/diagrams/sequence_diagram_save_game.puml)
 
 ## Diagram klas
 
-![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind/main/diagrams/class_diagram.puml)
+![Sequence Diagram](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/Joanna-Szczesna/Mastermind_SPRING/main/diagrams/class_diagram.puml)
 
 ## Wymagania funkcjonalne
 
